@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Sora Studio online booking and reservation system">
+  <title>SORA — Book Your Moment</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="announcement"><span class="dot"></span> A little time for yourself goes a long way.</div>
+  <header class="site-header">
+    <a class="brand" href="#home" aria-label="Sora home"><span class="brand-mark">S</span><span>SORA<span class="brand-sub">STUDIO & BOOKING</span></span></a>
+    <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+    <nav id="mainNav" aria-label="Main navigation">
+      <a href="#home" class="nav-link active">Home</a>
+      <a href="#services" class="nav-link">Services</a>
+      <a href="#booking" class="nav-link">Book a slot</a>
+      <a href="#manage" class="nav-link">My bookings</a>
+      <a href="#about" class="nav-link">About</a>
+    </nav>
+    <a class="header-cta" href="#booking">Reserve now <span>↗</span></a>
+  </header>
+
+  <main>
+    <section class="hero section-wrap" id="home">
+      <div class="hero-copy">
+        <p class="eyebrow">YOUR TIME. YOUR WAY.</p>
+        <h1>Make room for<br><em>something lovely.</em></h1>
+        <p class="hero-text">A calm, simple way to plan your next visit. Choose a service, find a time that works, and leave the details to us.</p>
+        <div class="hero-actions"><a class="button button-dark" href="#booking">Book an appointment <span>↗</span></a><a class="text-link" href="#services">Explore services <span>→</span></a></div>
+        <div class="hero-note"><span class="avatar-stack"><i>✦</i><i>♡</i><i>✿</i></span><span><strong>Thoughtfully scheduled</strong><br>Easy booking, clear confirmations.</span></div>
+      </div>
+      <div class="hero-art" aria-label="Decorative studio illustration">
+        <div class="art-orbit orbit-one"></div><div class="art-orbit orbit-two"></div>
+        <div class="art-sun"></div><div class="art-leaf leaf-one"></div><div class="art-leaf leaf-two"></div>
+        <div class="art-label">A MOMENT<br>JUST FOR YOU</div><div class="art-stamp">SORA<br>✳<br>STUDIO</div>
+      </div>
+      <div class="hero-bottom"><span>01 / A BETTER WAY TO BOOK</span><span>SCROLL TO DISCOVER ↓</span></div>
+    </section>
+
+    <section class="intro section-wrap">
+      <div><p class="eyebrow">THE SORA EXPERIENCE</p><h2>Good things begin<br>with a <em>little planning.</em></h2></div>
+      <p>Whether you’re planning a self-care session or a focused studio visit, Sora keeps your booking experience clear from the first click to the final confirmation.</p>
+    </section>
+
+    <section class="services section-wrap" id="services">
+      <div class="section-heading"><div><p class="eyebrow">CURATED FOR YOU</p><h2>Find your <em>kind of moment.</em></h2></div><p>Choose from our sample services below.<br>All details and prices are for demonstration.</p></div>
+      <div class="service-grid" id="serviceGrid">
+        <article class="service-card service-peach">
+          <div class="service-icon">✿</div><span class="service-number">01 / RESET</span><h3>Glow Session</h3><p>A refreshing beauty and self-care session designed to help you feel renewed.</p><div class="service-meta"><span>60 minutes</span><strong>₱650</strong></div><button class="service-book" data-service="Glow Session">Book this service <span>↗</span></button>
+        </article>
+        <article class="service-card service-sage">
+          <div class="service-icon">✳</div><span class="service-number">02 / RESTORE</span><h3>Calm Escape</h3><p>Take a pause with a relaxing wellness session and a slower pace.</p><div class="service-meta"><span>90 minutes</span><strong>₱900</strong></div><button class="service-book" data-service="Calm Escape">Book this service <span>↗</span></button>
+        </article>
+        <article class="service-card service-lilac">
+          <div class="service-icon">◇</div><span class="service-number">03 / REFINE</span><h3>Personal Styling</h3><p>A one-on-one consultation to explore a look that feels like you.</p><div class="service-meta"><span>45 minutes</span><strong>₱500</strong></div><button class="service-book" data-service="Personal Styling">Book this service <span>↗</span></button>
+        </article>
+      </div>
+    </section>
+
+    <section class="booking-section" id="booking">
+      <div class="section-wrap booking-layout">
+        <div class="booking-intro"><p class="eyebrow">LET'S MAKE IT OFFICIAL</p><h2>Your next<br><em>good moment.</em></h2><p>Complete the form and we’ll save your reservation on this device. You’ll receive an on-screen booking reference once submitted.</p><div class="booking-aside"><span>✳</span><p><strong>Good to know</strong><br>Choose a future date and an available time. Each time slot can only be reserved once.</p></div></div>
+        <form id="bookingForm" class="booking-form" novalidate>
+          <div class="form-top"><span>NEW RESERVATION</span><span>FORM 01 — 04</span></div>
+          <div class="form-row">
+            <label>Choose a service <select id="service" name="service" required><option value="">Select a service</option><option>Glow Session</option><option>Calm Escape</option><option>Personal Styling</option></select><small class="error" id="serviceError"></small></label>
+            <label>Preferred date <input id="date" name="date" type="date" required><small class="error" id="dateError"></small></label>
+          </div>
+          <fieldset><legend>Choose a time</legend><div class="time-grid" id="timeGrid">
+            <button type="button" class="time-option" data-time="09:00 AM">09:00 AM</button><button type="button" class="time-option" data-time="10:30 AM">10:30 AM</button><button type="button" class="time-option" data-time="12:00 PM">12:00 PM</button><button type="button" class="time-option" data-time="01:30 PM">01:30 PM</button><button type="button" class="time-option" data-time="03:00 PM">03:00 PM</button><button type="button" class="time-option" data-time="04:30 PM">04:30 PM</button>
+          </div><small class="error" id="timeError"></small></fieldset>
+          <div class="form-divider"></div>
+          <div class="form-row">
+            <label>Full name <input id="customerName" name="customerName" type="text" placeholder="e.g. Alex Santos" maxlength="70" required><small class="error" id="nameError"></small></label>
+            <label>Email address <input id="email" name="email" type="email" placeholder="you@example.com" maxlength="100" required><small class="error" id="emailError"></small></label>
+          </div>
+          <label>Contact number <input id="phone" name="phone" type="tel" placeholder="09XX XXX XXXX" maxlength="20" required><small class="error" id="phoneError"></small></label>
+          <label>Notes <textarea id="notes" name="notes" rows="3" maxlength="300" placeholder="Anything we should know? (optional)"></textarea></label>
+          <div class="form-bottom"><p>By booking, you agree that this is a demonstration reservation stored locally on this browser.</p><button class="button button-dark submit-button" type="submit">Confirm reservation <span>↗</span></button></div>
+          <div id="formMessage" class="form-message" role="status" aria-live="polite"></div>
+        </form>
+      </div>
+    </section>
+
+    <section class="confirmation-section section-wrap hidden" id="confirmation">
+      <div class="confirmation-card"><div class="confirm-icon">✓</div><p class="eyebrow">RESERVATION SAVED</p><h2>You're on the <em>calendar.</em></h2><p>Your booking has been saved in this browser. Keep your reference number for your records.</p><div class="reference-box"><span>BOOKING REFERENCE</span><strong id="confirmRef">SORA-000000</strong></div><div class="confirm-details" id="confirmDetails"></div><button class="button button-dark" id="newBooking">Make another booking ↗</button></div>
+    </section>
+
+    <section class="manage-section section-wrap" id="manage">
+      <div class="section-heading"><div><p class="eyebrow">YOUR PERSONAL SCHEDULE</p><h2>Bookings, <em>at a glance.</em></h2></div><p>Search, update status, or cancel a saved reservation.</p></div>
+      <div class="manage-toolbar"><label class="search-box"><span>⌕</span><input id="searchBookings" type="search" placeholder="Search name, reference, or service..." aria-label="Search bookings"></label><select id="statusFilter" aria-label="Filter by status"><option value="all">All statuses</option><option value="Confirmed">Confirmed</option><option value="Completed">Completed</option><option value="Cancelled">Cancelled</option></select></div>
+      <div class="table-wrap"><table><thead><tr><th>REFERENCE</th><th>GUEST / SERVICE</th><th>DATE & TIME</th><th>STATUS</th><th>ACTIONS</th></tr></thead><tbody id="bookingRows"><tr><td colspan="5" class="empty-state">No bookings yet. Your next moment can start above.</td></tr></tbody></table></div>
+      <p class="storage-note"><span class="dot"></span> Your records are stored in this browser using localStorage.</p>
+    </section>
+
+    <section class="about-section" id="about"><div class="section-wrap about-inner"><div><p class="eyebrow">A NOTE FROM SORA</p><h2>Less back-and-forth.<br><em>More being present.</em></h2></div><p>Sora is a front-end booking prototype created for a student project. It demonstrates service selection, appointment scheduling, form validation, reservation management, and browser-based data persistence. No real payment or external booking is processed.</p></div></section>
+  </main>
+
+  <footer class="site-footer"><a class="brand footer-brand" href="#home"><span class="brand-mark">S</span><span>SORA<span class="brand-sub">STUDIO & BOOKING</span></span></a><span>DESIGNED FOR A MOMENT THAT'S YOURS.</span><a href="#home">BACK TO TOP ↑</a><small>© 2026 SORA STUDIO — STUDENT PROJECT DEMO</small></footer>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <script src="script.js"></script>
+</body>
+</html>
